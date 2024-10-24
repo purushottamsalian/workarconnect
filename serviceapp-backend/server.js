@@ -4,13 +4,19 @@ const bcrypt = require("bcrypt");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 
+require('dotenv').config();
+
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://workarconnect-g1t2f2tcf-purushottamsalians-projects.vercel.app/"],
+  methods: ["POST","GET"],
+  credentials: true
+}));
 
 const { Schema } = mongoose;
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/Users")
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("Database connected");
   })
@@ -26,7 +32,7 @@ const userSchema = new mongoose.Schema({
 
 const userModel = mongoose.model("User", userSchema);
 
-const JWT_SECRET = "9324662246";
+const JWT_SECRET = process.env.JWT_TOKEN;
 
 app.use(express.json());
 
