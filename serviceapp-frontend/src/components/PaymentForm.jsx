@@ -58,7 +58,7 @@ const PaymentForm = () => {
             pincode,
         };
 
-        fetch('http://localhost:9000/api/payment', {
+        fetch('http://workarconnect-nx8y-buuvhf4ed-purushottamsalians-projects.vercel.app/api/payment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ export default function SignUp() {
     console.log('Sign-up attempted with:', { username, email, password, confirmPassword });
 
     try {
-      const response = await fetch("http://localhost:3000/signup", {
+      const response = await fetch("http://workarconnect-nx8y-buuvhf4ed-purushottamsalians-projects.vercel.app/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

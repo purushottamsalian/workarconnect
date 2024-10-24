@@ -18,7 +18,7 @@ const Job = () => {
     const formData = { name, email, mobile, category, jobProfile };
 
     try {
-      const response = await fetch('http://localhost:3000/job', {  // Update the endpoint
+      const response = await fetch('http://workarconnect-nx8y-buuvhf4ed-purushottamsalians-projects.vercel.app/job', {  // Update the endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
