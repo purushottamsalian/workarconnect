@@ -36,6 +36,10 @@ const JWT_SECRET = process.env.JWT_TOKEN;
 
 app.use(express.json());
 
+app.get("/hellom",async (req,res)=>{
+  res.send("hello")
+})
+
 app.post("/signup", async (req, res) => {
   try {
     const { username, email, password, confirmPassword } = req.body;
